@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h3>
+            Welcome to Quiz App
+        </h3>
+        <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque voluptatum magnam, ullam tempore quos ipsa culpa iste eaque aliquid facere quaerat, corporis vitae nostrum eius, hic nam possimus rerum.
+        </p>
+    </div>    
+    <div>
+        <p>Rules</p>
+        <ul>
+            <li>Correct answer 10 points</li>
+            <li>Wrong answer -10 points</li>
+            <li>60 s to asnwer each question</li>
+            <li>Refreshing page will reset the quiz</li>
+        </ul>
+    </div>
+    <div class="user-details">
+        <h3>Player details</h3>
+        <div>
+            <label for="">Name:</label>
+            <input type="text" class="form-control" #username>
+        </div>
+        <button type="button" routerLink="/question" (click)="startQuiz()">Start the quiz</button>
+    </div>
+</div>

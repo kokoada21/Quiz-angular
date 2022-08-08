@@ -1,0 +1,54 @@
+<div class="container">
+    <ng-container *ngIf="!isQuizCompleted">
+        <div class="upperBanner highlight">
+            <div class="playerInfo">
+                <span class="highlight">Username: </span> 
+                <span>{{ username }}</span>
+            </div>
+            <div class="points">
+                points {{ points }}    
+            </div>
+            <div class="questionCounter">
+                Question {{currentQuestion + 1}} of {{questionList.length}}
+            </div>
+            <div class="timer">
+                {{ counter }} s
+            </div>
+        </div>
+        <div class="meter animate">
+            <span [ngStyle]="{'width': progress + '%'}"></span>
+        </div>
+        <div class="question">
+                <span class="highlight">{{currentQuestion + 1}} </span>
+                <span class="question-text">{{ questionList[currentQuestion]?.questionText}}</span>
+                    <ul class="answers">
+                        <li
+                        *ngFor="let option of questionList[currentQuestion]?.options" 
+                        (click)="selectAnswer(option)"
+                        appChangeBg [isCorrect]="option.correct" > 
+                        {{ option.text }}
+                        </li>
+                    </ul>
+        </div>
+        <div class="controls">
+            <button type="button" (click)="previousQuestion()">Previous</button>
+            <button type="button" (click)="resetQuiz()">Reset quiz</button>
+            <button type="button" (click)="nextQuestion()">Next</button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isQuizCompleted">
+        <div class="results">
+            <h3>Congratulations</h3><br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum provident debitis dolor sequi? Sapiente maiores quia voluptatum quidem, expedita illum quas dolores nostrum sequi facilis pariatur reiciendis consequatur exercitationem voluptas?</p>
+            <ul>
+                <li>Final score: <span>{{ points }}</span></li>
+                <li>Total correct answers: <span>{{ correctAnswers }}</span></li>
+                <li> Total wrong answers <span>{{ wrongAnswers }}</span></li>
+            </ul>
+            <div class="resultControls">
+                <button type="button" (click)="resetQuiz()">Reset quiz</button>
+                <button type="button" routerLink="/welcome">Back to welcome page</button>
+            </div>
+        </div>
+    </ng-container>  
+</div> 

@@ -1,0 +1,13 @@
+$bg-color: #438797;
+
+.nav-bar{
+    background-color: $bg-color ;
+    display: flex;
+    padding: 20px 0 20px 5%;
+}
+nav {
+    .title {
+        font-size: 30px;
+        color: white;
+    }
+}
