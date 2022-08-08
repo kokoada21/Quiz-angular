@@ -83,8 +83,7 @@ export class QuestionComponent implements OnInit {
     .subscribe(val =>{
       this.counter--;
       if(this.counter === 0){
-        this.currentQuestion++;
-        this.counter = 60;
+        this.nextQuestion();
         this.pointHandler(-10);
       }
     });
