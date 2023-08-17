@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-welcome',
@@ -11,7 +10,7 @@ export class WelcomeComponent implements OnInit {
 
   @ViewChild('username') usernameKey!: ElementRef;
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
